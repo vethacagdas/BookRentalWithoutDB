@@ -1,0 +1,24 @@
+﻿@model Student
+
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-info text-white">
+            <h2 class="text-center">Student Details</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tr><td><strong>ID</strong></td><td>@Model.ID</td></tr>
+                <tr><td><strong>Name</strong></td><td>@Model.Name</td></tr>
+                <tr><td><strong>Surname</strong></td><td>@Model.Surname</td></tr>
+                <tr><td><strong>Birth Date</strong></td><td>@Model.BirthDate.ToLongDateString()</td></tr>
+            </table>
+            <div class="text-center">
+                <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-warning">Edit</a>
+                <form asp-action="Delete" asp-route-id="@Model.ID" method="post" class="d-inline">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
