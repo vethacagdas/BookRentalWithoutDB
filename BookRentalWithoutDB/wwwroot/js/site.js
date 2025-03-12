@@ -3,16 +3,21 @@
 
 // Write your JavaScript code.
 
-function filterStudents() {
-    let input = document.getElementById("searchInput").value.toLowerCase();
-    let rows = document.querySelectorAll("#studentTable tr");
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+        let input = this.value.toLowerCase();
+        let rows = document.querySelectorAll("#studentTable tbody tr");
 
-    rows.forEach(row => {
-        let text = row.innerText.toLowerCase();
-        if (text.includes(input)) {
-            row.style.display = "";
-        } else {
-            row.style.display = "none";
-        }
+        rows.forEach(row => {
+            let id = row.cells[0].innerText.toLowerCase();
+            let name = row.cells[1].innerText.toLowerCase();
+            let surname = row.cells[2].innerText.toLowerCase();
+
+            if (id.includes(input) || name.includes(input) || surname.includes(input)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
     });
-}
+});

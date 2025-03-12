@@ -110,3 +110,20 @@ footer {
         transform: scale(1.05);
 }
 
+#searchInput {
+    width: 50%;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+#searchInput:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
